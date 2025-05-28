@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OracaoMeetHelper</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Pedidos de Oração</h1>
+
+    
+    <div class="page" data-page="1">
+      <section class="input-section">
+        <label for="prayer-list">Lista de pedidos (1 por linha):</label>
+        <div class="textarea-wrapper">
+          <textarea id="prayer-list" placeholder="Ex:&#10;1. Pelo culto de domingo&#10;2. Pela saúde do João"></textarea>
+          <button id="clear-prayer-list" type="button" title="Limpar" hidden>X</button>
+        </div>
+      </section>
+      <section class="settings-section card-tabs">
+        <nav class="tab-nav">
+          <button class="tab-link active" data-tab="by-participants">
+            Por participantes
+          </button>
+          <button class="tab-link" data-tab="by-requests">
+            Por pedidos por pessoa
+          </button>
+        </nav>
+
+        <div class="tab-container">
+          <div class="tab-panel active" id="by-participants">
+            <label for="participant-count">Número de participantes:</label>
+             <div class="input-button-group">
+            <input type="number" id="participant-count" min="1" placeholder="Ex: 3" />
+            <button type="button" id="refresh-participants" title="Atualizar número de participantes">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6h2c0-4.42-3.58-8-8-8zm0 16v3l4-4-4-4v3c-3.31 0-6-2.69-6-6H4c0 4.42 3.58 8 8 8z"/>
+              </svg>
+            </button>
+          </div>
+          </div>
+          <div class="tab-panel" id="by-requests">
+            <label for="requests-per-person">Pedidos por pessoa:</label>
+            <input type="number" id="requests-per-person" min="1"/>
+          </div>
+        </div>
+      </section>
+
+      <section class="actions-section">
+        <button id="next-button">Proximo</button>
+      </section>
+    </div>
+    
+    <div class="page" data-page="2">
+      <section class="result-section">
+        <h2>Divisão dos pedidos</h2>
+        <div id="division-output"></div>
+
+        <div class="actions-section">
+          <button id="back-button">Voltar</button>
+          <button id="send-to-chat">Enviar para o chat do Meet</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

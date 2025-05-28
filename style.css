@@ -1,0 +1,293 @@
+/* === Reset e base === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9fb;
+  color: #333;
+  width: 360px;
+  padding: 1rem;
+} */
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #2c2f33;
+  width: 360px;
+  padding: 1rem;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* === Layout geral === */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* === Títulos === */
+h1 {
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+  text-align: center;
+  color: #1a1d21;
+}
+
+h2 {
+  font-size: 1.15rem;
+  color: #1a1d21;
+  margin-bottom: 0.5rem;
+}
+
+/* === Inputs e Textareas === */
+textarea,
+input {
+  width: 100%;
+  padding: 0.55rem 0.6rem;
+  border: 1px solid #ccd1d9;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #fff;
+  resize: vertical;
+  transition: border-color 0.2s ease;
+}
+
+textarea {
+  height: 100px;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  border-color: #3a7bfd;
+  box-shadow: 0 0 0 2px rgba(58, 123, 253, 0.15);
+}
+
+/* === Labels === */
+label {
+  font-weight: 600;
+  margin: 0.4rem 0 0.2rem 0;
+  display: block;
+  color: #444;
+}
+
+/* === Botões === */
+button {
+  background-color: #3a7bfd;
+  color: white;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #2f68e6;
+}
+
+button:disabled {
+  background-color: #c6c9d0;
+  cursor: not-allowed;
+}
+
+/* === Seções === */
+.input-section,
+.settings-section,
+.actions-section,
+.result-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+/* === Output formatado === */
+#division-output {
+  background-color: #eef2f7;
+  border: 1px solid #cbd5e0;
+  border-radius: 5px;
+  padding: 0.6rem;
+  max-height: 220px;
+  overflow-y: auto;
+  font-family: monospace;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+/* === Página oculta === */
+.page[hidden] {
+  display: none;
+}
+
+/* === Tabs === */
+.tab-nav {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.tab-link {
+  flex: 1;
+  background-color: #e9ecef;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
+  border-radius: 6px 6px 0 0;
+  transition: background-color 0.2s ease;
+}
+
+.tab-link:hover {
+  background-color: #dee2e6;
+}
+
+.tab-link.active {
+  background-color: #ffffff;
+  font-weight: 600;
+  color: #1a1d21;
+  border-bottom: 1px solid white;
+}
+
+/* === Painéis de cada aba === */
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* === Tabs com cartão embutido === */
+.card-tabs {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.card-tabs .tab-nav {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  background-color: #f5f5f5;
+  margin: 0;
+}
+
+.card-tabs .tab-link {
+  flex: 1;
+  padding: 0.5rem;
+  text-align: center;
+  background: #e9ecef;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-right: 1px solid #ccc;
+}
+
+.card-tabs .tab-link:last-child {
+  border-right: none;
+}
+
+.card-tabs .tab-link.active {
+  background: #fff;
+  font-weight: 600;
+  border-bottom: 2px solid #fff;
+}
+
+.card-tabs .tab-container {
+  margin-top: -1rem;
+  padding: 0.8rem;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+
+/* -------- */
+.textarea-wrapper {
+  position: relative;
+}
+
+#clear-prayer-list {
+  position: absolute;
+  top: 5px;
+  left: 90%;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: #ccc;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  padding: 0;
+  z-index: 1;
+  transition: background 0.2s ease;
+}
+
+#clear-prayer-list[hidden] {
+  display: none;
+}
+
+#clear-prayer-list:hover {
+  background: #999;
+}
+
+.input-with-button {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.input-button-group {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.input-button-group input {
+  flex: 1;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-720deg); }
+}
+
+.input-button-group button {
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  padding: 0.2rem;
+  border-radius: 50%;
+  line-height: 0;
+  background: transparent;
+}
+
+.input-button-group button:hover {
+  padding: 0.2rem;
+  border-radius: 50%;
+  background-color: #d4d4d4;
+  animation: spin 0.8s linear;
+}

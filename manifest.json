@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "OracaoMeetHelper",
+  "description": "Facilita a divisão e envio de pedidos de oração durante reuniões no Google Meet.",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "public/icons/icon128.png",
+      "48": "public/icons/icon128.png",
+      "128": "public/icons/icon128.png"
+    }
+  },
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://meet.google.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://meet.google.com/*"],
+      "js": ["src/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "public/icons/icon128.png",
+    "48": "public/icons/icon128.png",
+    "128": "public/icons/icon128.png"
+  }
+}
