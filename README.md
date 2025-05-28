@@ -32,6 +32,19 @@
 5. Visualize a distribuição dos pedidos
 6. Clique em "Enviar para o chat do Meet"
 
+## Capturas de Tela
+
+### Entrada de pedidos
+#### Entrada de pedidos
+![Entrada de pedidos](./public/screenshots/request_entry.png)
+
+### Visualização da divisão
+#### Divisão - Pessoa 1
+![Divisão - Pessoa 1](./public/screenshots/division_people_1.png)
+#### Divisão - Pessoa 2
+![Divisão - Pessoa 2](./public/screenshots/division_people_2.png)
+
+
 ## Estrutura do Projeto
 
 ```text
